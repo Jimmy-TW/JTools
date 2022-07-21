@@ -1,10 +1,11 @@
-# JTools
+### JTools
 PHP JTools Class
 
-Version：1.2.10
+###Version：1.2.10
 Author ：陳志銘
 Last Updated：2022/07/07
-歷程：
+
+###歷程：
 20220707 新增 sendSMSResult
 20220620 新增 getCouponStatus
 20220530 新增 jsCaptureImage
