@@ -1,6 +1,6 @@
 <?php
 /*
-PHP5 PHP7 共用
+PHP5 PHP7 共用 以 /home/httpd/htdocs/home/newportal/zmi/dev/class.basic.php 修改
 
 Version	：1.2.10
 Author	：陳志銘
@@ -37,6 +37,14 @@ class JTools extends basic{
 
     public function dp5(){
 		return parent::dp5();
+	}
+
+    public function dp7(){
+		return parent::dp7();
+	}
+
+    public function mysql($host = '', $user = '', $password = '', $port = 3306, $dbName = ''){
+        return parent::mysql($host, $user, $password, $port, $dbName);
 	}
 
     public function pbx(){
@@ -97,6 +105,18 @@ class JTools extends basic{
 
     public function ftp($source = array(), $destination = array(), $ftpHost = '', $ftpPort = 21, $ftpUser = '', $ftpPassword = '', $mode = 1, $passive = 1){
         return parent::ftp($source, $destination, $ftpHost, $ftpPort, $ftpUser, $ftpPassword, $mode, $passive);
+    }
+
+    public function ftpDownload($source = array(), $destination = array(), $host = '', $user = '', $password = '', $port = 21){
+        return parent::ftpDownload($source, $destination, $host, $user, $password, $port);
+    }
+
+    public function sftp($source = array(), $destination = array(), $host = '', $user = '', $password = '', $port = 22, $mode = ''){
+        return parent::sftp($source, $destination, $host, $user, $password, $port, $mode);
+    }
+
+    public function sftpDownload($source = array(), $destination = array(), $host = '', $user = '', $password = '', $port = 22){
+        return parent::sftpDownload($source, $destination, $host, $user, $password, $port);
     }
 
     public function ecAPI($api = '', $request = 'POST', $data = array(), $header = array(), $timeout = 120){
@@ -239,8 +259,8 @@ class JTools extends basic{
         return parent::zip($filename, $files);
     }
 
-    public function unzip($files = array()){
-        return parent::unzip($files);
+    public function unzip($source = '', $savePath = ''){
+        return parent::unzip($source, $savePath);
     }
 
     public function array2XML($array = array()){
@@ -359,48 +379,48 @@ class JTools extends basic{
         return parent::formAction($path);
     }
     
-    public function formToken($methed = 'GET', $id = ''){
-        return parent::formToken($methed, $id);
+    public function formToken($method = 'GET', $id = ''){
+        return parent::formToken($method, $id);
     }
 
-    public function selectArea($id = 'area'){
-		return parent::selectArea($id);
+    public function selectArea($id = 'area', $class = ''){
+		return parent::selectArea($id, $class);
 	}
 
-	public function selectStoreDept($id = 'store_dept'){
-		return parent::selectStoreDept($id);
+	public function selectStoreDept($id = 'store_dept', $class = ''){
+		return parent::selectStoreDept($id, $class);
 	}
 
-	public function selectStore($id = 'store'){
-		return parent::selectStore($id);
+	public function selectStore($id = 'store', $class = ''){
+		return parent::selectStore($id, $class);
 	}
 
-	public function selectDeliveryType($id = 'delivery_type'){
-		return parent::selectDeliveryType($id);
+	public function selectDeliveryType($id = 'delivery_type', $class = ''){
+		return parent::selectDeliveryType($id, $class);
 	}
 
-	public function selectSdept($id = 'sdept'){
-		return parent::selectSdept($id);
+	public function selectSdept($id = 'sdept', $class = ''){
+		return parent::selectSdept($id, $class);
 	}
 
-	public function selectSdeptClas($id = 'sdept_clas'){
-		return parent::selectSdeptClas($id);
+	public function selectSdeptClas($id = 'sdept_clas', $class = ''){
+		return parent::selectSdeptClas($id, $class);
 	}
 
-	public function selectSdeptSclas($id = 'sdept_sclas'){
-		return parent::selectSdeptSclas($id);
+	public function selectSdeptSclas($id = 'sdept_sclas', $class = ''){
+		return parent::selectSdeptSclas($id, $class);
 	}
 
-	public function selectSdeptM($id = 'sdeptM'){
-		return parent::selectSdeptM($id);
+	public function selectSdeptM($id = 'sdeptM', $class = ''){
+		return parent::selectSdeptM($id, $class);
 	}
 
-	public function selectPM($id = 'pm'){
-		return parent::selectPM($id);
+	public function selectPM($id = 'pm', $class = ''){
+		return parent::selectPM($id, $class);
 	}
 
-	public function selectACC($id = 'acc'){
-		return parent::selectACC($id);
+	public function selectACC($id = 'acc', $class = ''){
+		return parent::selectACC($id, $class);
 	}
 
     public function pagination($count = 0, $pagerow = 0){
@@ -475,8 +495,8 @@ class JTools extends basic{
         return parent::webFooter($content, $style);
     }
 
-    public function htmlFrame($src = '', $id = 'iframe-page'){
-		return parent::htmlFrame($src, $id);
+    public function htmlFrame($src = '', $id = 'iframe-page', $height = ''){
+		return parent::htmlFrame($src, $id, $height);
 	}
 
     public function loadHTML($id = 'load-html', $class = ''){
@@ -600,6 +620,22 @@ class JTools extends basic{
     }
 
     //DB
+    public function tableDelete($dbDotTable = '', $columnData = array()){
+        return parent::tableDelete($dbDotTable, $columnData);
+    }
+    
+    public function tableInsert($dbDotTable = '', $columnData = array()){
+		return parent::tableInsert($dbDotTable, $columnData);
+	}
+
+    public function tableInsertUpdate($dbDotTable = '', $columnData = array(), $offset = 9999){
+		return parent::tableInsertUpdate($dbDotTable, $columnData, $offset);
+	}
+
+	public function tableUpdate($dbDotTable = '', $columnData = array(), $offset = 9999){
+		return parent::tableUpdate($dbDotTable, $columnData, $offset);
+	}
+
     public function tableInsertColumn($array = array()){
 		return parent::tableInsertColumn($array);
 	}
