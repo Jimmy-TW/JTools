@@ -103,6 +103,14 @@ class JTools extends basic{
         return parent::embedAddressSelect();
     }
 
+    public function addressSelect($class = ''){
+        return parent::addressSelect($class);
+    }
+
+    public function storeSelect($class = '', $area = 0){
+        return parent::storeSelect($class, $area);
+    }
+
     public function ftp($source = array(), $destination = array(), $ftpHost = '', $ftpPort = 21, $ftpUser = '', $ftpPassword = '', $mode = 1, $passive = 1){
         return parent::ftp($source, $destination, $ftpHost, $ftpPort, $ftpUser, $ftpPassword, $mode, $passive);
     }
@@ -191,6 +199,10 @@ class JTools extends basic{
     //系統
     public function getDebugTrace($object = 0, $limit = 0){
         return parent::getDebugTrace($object, $limit);
+    }
+
+    public function data2File($data = '', $filePath = '', $append = 0){
+        return parent::data2File($data, $filePath, $append);
     }
     
     public function getPathList($fullPath = ''){
@@ -507,6 +519,18 @@ class JTools extends basic{
         return parent::htmlFooter($content);
     }
 
+    public function htmlFooterJumbotron($content = array(), $copyright = '', $style = ''){
+        return parent::htmlFooterJumbotron($content, $copyright, $style);
+    }
+
+    public function carousel($id = 'j-carousel', $width = '200px', $height = '150px', $intervalSec = 3, $array = array()){
+        return parent::carousel($id, $width, $height, $intervalSec, $array);
+    }
+
+    public function imageScroll($width = '100%', $height = '200px', $speed = 30, $images = array()){
+        return parent::imageScroll($width, $height, $speed, $images);
+    }
+
     //常用主檔
     public function getInvoiceType($yyyymmdd = '', $invoice = ''){
         return parent::getInvoiceType($yyyymmdd, $invoice);
@@ -605,6 +629,10 @@ class JTools extends basic{
 
     public function getURI(){
         return parent::getURI();
+    }
+
+    public function getFullUrl($uri = 1){
+        return parent::getFullUrl($uri);
     }
 
     public function textMask($text = '', $mask = '*', $qty = 1){
