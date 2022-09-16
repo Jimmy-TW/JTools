@@ -67,6 +67,10 @@ class JTools extends basic{
         return parent::mysqlCommitTrx($connection);
     }
 
+    public function mysqlRollBack($connection = false){
+		return parent::mysqlRollBack($connection);
+	}
+
     public function mysqlLastInsertId($connection = false){
         return parent::mysqlLastInsertId($connection);
     }
@@ -197,6 +201,18 @@ class JTools extends basic{
 	}
 
     //系統
+    public function big52utf8($input = ''){
+		return parent::big52utf8($input);
+	}
+	
+	public function utf82big5($input = ''){
+		return parent::utf82big5($input);
+	}
+
+	public function custom2utf8($input = '', $encoding = 'big5'){
+		return parent::custom2utf8($input, $encoding);
+	}
+
     public function getDebugTrace($object = 0, $limit = 0){
         return parent::getDebugTrace($object, $limit);
     }
@@ -447,8 +463,8 @@ class JTools extends basic{
         return parent::phpHeader($contentType, $arg1, $arg2);
     }
     
-    public function htmlHeadV1($siteName = '', $meta = '', $js = array()){
-        return parent::htmlHeadV1($siteName, $meta, $js);
+    public function htmlHeadV1($siteName = '', $meta = '', $js = array(), $cacheFile = ''){
+        return parent::htmlHeadV1($siteName, $meta, $js, $cacheFile);
     }
 
     public function htmlHead($siteName = '', $meta = ''){
@@ -535,7 +551,7 @@ class JTools extends basic{
     public function getInvoiceType($yyyymmdd = '', $invoice = ''){
         return parent::getInvoiceType($yyyymmdd, $invoice);
     }
-	public function getEmp($empno = 'AZZZA'){
+	public function getEmp($empno = ''){
 		return parent::getEmp($empno);
 	}
 	
